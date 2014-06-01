@@ -1,0 +1,42 @@
+SYNOPSIS
+
+    Generate skeleton projects from github repos
+
+DESCRIPTION
+
+    `skl`, short for 'skeleton' lets you use a github repo
+    as a starting point for new projects.  The repo is cloned
+    to create the file structure for your new project.
+
+    This automates a few steps:
+
+    1. Expand to a github repo url from the arguments
+    2. Clone the project off of github into a new directory
+    3. Start fresh by purging the .git and .gitconfig files
+
+INSTALLATION
+
+    A couple options:
+
+    1. Copy/paste the skl file to a directory of your choosing.
+    2. Clone the repo and symlink to skl/skl
+
+    Then ensure `skl` is in your path.
+
+USAGE
+
+    You can provide a full git repo url, a github style user/name, or
+    just a repo name.  If you only provide a repo name, it will find
+    github.user in your gitconfig, so make sure that exists.
+
+    Examples, from most to least verbose:
+
+    $ skl git@github.com:bemurphy/app.git my_new_app_dir
+
+    # or
+
+    $ skl bemurphy/app my_new_app_dir
+
+    # or
+
+    $ skl app my_new_app_dir

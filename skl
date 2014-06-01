@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -e
+
+REPO=$1
+APP=$2
+
+if [[ -z $REPO || -z $APP ]]; then
+  echo "Must provide repo info and a target directory"
+  exit 1
+fi
+
+# straight up git url
+if [[ $REPO =~ ^git@ ]]; then
+  URL=$REPO
+
+# github style user/repo, like bemurphy/skl
+elif [[ $REPO =~ [0-9A-Za-z\-]/[0-9A-Za-z] ]]; then
+  URL="git@github.com:$REPO.git"
+
+# repo name, assume your github.user config
+else
+  GHUSER=`git config github.user`
+  URL="git@github.com:$GHUSER/$REPO.git"
+fi
+
+git clone --depth 1 $URL $APP
+cd $2
+rm -rf .git
+rm -f .gitignore
+
+echo
+echo "Skeleton done!"
+echo
+
+exit 0
