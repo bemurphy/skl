@@ -4,7 +4,7 @@ SYNOPSIS
 
 DESCRIPTION
 
-    `skl`, short for 'skeleton' lets you use a github repo
+    skl, short for skeleton lets you use a github repo
     as a starting point for new projects.  The repo is cloned
     to create the file structure for your new project.
 
@@ -21,7 +21,7 @@ INSTALLATION
     1. Copy/paste the skl file to a directory of your choosing.
     2. Clone the repo and symlink to skl/skl
 
-    Then ensure `skl` is in your path.
+    Then ensure skl is in your path.
 
 USAGE
 
