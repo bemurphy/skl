@@ -25,7 +25,7 @@ else
 fi
 
 git clone --depth 1 $URL $APP
-cd $2
+cd $APP
 rm -rf .git
 rm -f .gitignore
 
